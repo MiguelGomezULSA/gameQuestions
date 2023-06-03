@@ -1,13 +1,13 @@
-//
-//  gameVC.swift
-//  introMTWDM
-//
-//  Created by Miguel Gómez Díaz on 27/05/23.
-//
+// Básico (V=5, A= 3)
+// Intermedio (V= 3 A= 5)
+// Avanzado (V = 1  A = 10)
 
 import Cocoa
 
 class gameVC: NSViewController {
+    
+    var puntos:Int = 0;
+    var vidas:Int = 5;
     
     var randomIndex:Int?
     
@@ -31,7 +31,9 @@ class gameVC: NSViewController {
     
     @IBOutlet weak var falseBtn: NSButton!
     
+    @IBOutlet weak var puntoslbl: NSTextField!
     
+    @IBOutlet weak var vidaslbl: NSTextField!
     @IBOutlet weak var startBtn: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,8 @@ class gameVC: NSViewController {
         trueBtn.isHidden = true
         falseBtn.isHidden = true
         startBtn.isHidden = false
+        puntoslbl.isHidden = true
+        vidaslbl.isHidden = true
     }
     
     
@@ -52,6 +56,8 @@ class gameVC: NSViewController {
         trueBtn.isHidden = false
         falseBtn.isHidden = false
         startBtn.isHidden = true
+        puntoslbl.isHidden = false
+        vidaslbl.isHidden = false
         
         randomIndex = random(questions.count)
         
@@ -68,10 +74,21 @@ class gameVC: NSViewController {
         if answers[randomIndex!] == sender.title{
             
             print("Correcto")
+            puntos += 1
+            puntoslbl.stringValue = "Puntos: \(puntos)"
             
         }
         else{
             print("Incorrecto")
+            vidas -= 1
+            vidaslbl.stringValue = "Vidas: \(vidas)"
+            if vidas <= 0{
+                trueBtn.isHidden = true
+                falseBtn.isHidden = true
+                pregunta.stringValue = "Game Over"
+                startBtn.isHidden = false
+                return
+            }
         }
         
         randomIndex = random(questions.count)
