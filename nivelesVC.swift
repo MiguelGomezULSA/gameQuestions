@@ -21,10 +21,13 @@ class nivelesVC: NSViewController {
     
     @IBAction func niveles(_ sender: NSButton) {
         
-        if sender.title == "Intermedio"{
+        if sender.title == "Principiante"{
+            vidas = 5
+            puntos = 3
+        } else if sender.title == "Intermedio"{
             vidas = 3
             puntos = 5
-        }else if sender.title == "Avanzado"{
+        }else{
             vidas = 1
             puntos = 10
         }
