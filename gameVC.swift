@@ -6,8 +6,14 @@ import Cocoa
 
 class gameVC: NSViewController {
     
-    var puntos:Int = 0;
-    var vidas:Int = 5;
+    var nivel:String?
+    
+    var puntos:Int!;
+    var vidas:Int!;
+    
+    var vidasR:Int = 0
+    
+    var puntosObt:Int = 0
     
     var randomIndex:Int?
     
@@ -37,11 +43,15 @@ class gameVC: NSViewController {
     @IBOutlet weak var startBtn: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(nivel ?? "")
         // Do view setup here.
         startGame()
     }
     
+    
+    
     func startGame(){
+        
         pregunta.stringValue = "Welcome, press start for play"
         
         trueBtn.isHidden = true
@@ -49,15 +59,24 @@ class gameVC: NSViewController {
         startBtn.isHidden = false
         puntoslbl.isHidden = true
         vidaslbl.isHidden = true
+        
+        
     }
     
     
     @IBAction func start(_ sender: NSButton) {
+        
+        reset()
+        
+        vidasR = vidas
         trueBtn.isHidden = false
         falseBtn.isHidden = false
         startBtn.isHidden = true
         puntoslbl.isHidden = false
         vidaslbl.isHidden = false
+        
+        vidaslbl.stringValue = "Vidas: \(vidasR)"
+        puntoslbl.stringValue = "Puntos: 0"
         
         randomIndex = random(questions.count)
         
@@ -71,18 +90,22 @@ class gameVC: NSViewController {
     
     @IBAction func responses(_ sender: NSButton) {
         
+        
+        
         if answers[randomIndex!] == sender.title{
             
             print("Correcto")
-            puntos += 1
-            puntoslbl.stringValue = "Puntos: \(puntos)"
-            
+            puntosObt += 1
+            puntoslbl.stringValue = "Puntos: \(puntosObt)"
+            if puntosObt == puntos{
+                print("GANÓ")
+            }
         }
         else{
             print("Incorrecto")
-            vidas -= 1
-            vidaslbl.stringValue = "Vidas: \(vidas)"
-            if vidas <= 0{
+            vidasR -= 1
+            vidaslbl.stringValue = "Vidas: \(vidasR)"
+            if vidasR <= 0{
                 trueBtn.isHidden = true
                 falseBtn.isHidden = true
                 pregunta.stringValue = "Game Over"
@@ -98,6 +121,12 @@ class gameVC: NSViewController {
         
         
     }
+    
+    func reset(){
+        vidasR = vidas
+        puntosObt = 0
+    }
+    
     
     
 }

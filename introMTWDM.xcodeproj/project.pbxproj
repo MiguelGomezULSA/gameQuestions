@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A86CB962A2BB4C40030CD0B /* nivelesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A86CB952A2BB4C40030CD0B /* nivelesVC.swift */; };
 		5AC7EB962A227B1500E6B43E /* performVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7EB942A227B1500E6B43E /* performVC.swift */; };
 		5AC7EB972A227B1500E6B43E /* performVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7EB952A227B1500E6B43E /* performVC.xib */; };
 		5AC7EB9A2A2286D200E6B43E /* gameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7EB982A2286D200E6B43E /* gameVC.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A86CB952A2BB4C40030CD0B /* nivelesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nivelesVC.swift; sourceTree = SOURCE_ROOT; };
 		5AC7EB942A227B1500E6B43E /* performVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = performVC.swift; sourceTree = SOURCE_ROOT; };
 		5AC7EB952A227B1500E6B43E /* performVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = performVC.xib; sourceTree = SOURCE_ROOT; };
 		5AC7EB982A2286D200E6B43E /* gameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameVC.swift; sourceTree = SOURCE_ROOT; };
@@ -62,6 +64,7 @@
 		5AEA27412A193ACC0024E2ED /* introMTWDM */ = {
 			isa = PBXGroup;
 			children = (
+				5A86CB952A2BB4C40030CD0B /* nivelesVC.swift */,
 				5AC7EB982A2286D200E6B43E /* gameVC.swift */,
 				5AC7EB992A2286D200E6B43E /* gameVC.xib */,
 				5AC7EB942A227B1500E6B43E /* performVC.swift */,
@@ -151,6 +154,7 @@
 				5AEA27452A193ACC0024E2ED /* ViewController.swift in Sources */,
 				5AEA27522A1948AA0024E2ED /* VCManejoEnteros.swift in Sources */,
 				5AC7EB962A227B1500E6B43E /* performVC.swift in Sources */,
+				5A86CB962A2BB4C40030CD0B /* nivelesVC.swift in Sources */,
 				5AEA27432A193ACC0024E2ED /* AppDelegate.swift in Sources */,
 				5AC7EB9A2A2286D200E6B43E /* gameVC.swift in Sources */,
 			);

@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--NivelesVC-->
         <scene sceneID="PEy-af-ZVY">
             <objects>
-                <viewController id="Phc-fp-GHa" sceneMemberID="viewController">
+                <viewController id="Phc-fp-GHa" customClass="nivelesVC" customModule="introMTWDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Rqy-V8-X7O">
                         <rect key="frame" x="0.0" y="0.0" width="228" height="205"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -716,14 +716,20 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="niveles:" target="Phc-fp-GHa" id="4bt-Pm-VKO"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhj-SA-Ypo">
-                                <rect key="frame" x="69" y="81" width="92" height="32"/>
+                                <rect key="frame" x="65" y="81" width="100" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="intermdio" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lK1-hx-xjx">
+                                <buttonCell key="cell" type="push" title="Intermedio" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lK1-hx-xjx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="niveles:" target="Phc-fp-GHa" id="ZYI-Ky-3bU"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56z-lv-jOE">
                                 <rect key="frame" x="68" y="28" width="94" height="32"/>
@@ -732,11 +738,14 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="niveles:" target="Phc-fp-GHa" id="0kY-5v-heQ"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
-                        <segue destination="nmY-TE-1om" kind="show" id="v1M-ic-mpI"/>
+                        <segue destination="nmY-TE-1om" kind="show" identifier="irJuego" id="v1M-ic-mpI"/>
                     </connections>
                 </viewController>
                 <customObject id="eI5-d6-86c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
